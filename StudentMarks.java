@@ -53,11 +53,29 @@ public class StudentMarks {
 		
 		int tot = totalPassStudents(stu);
 		System.out.println("all pass students no--->"+tot);
+		int graceTot = getGraceTotalStu(stu);
+		System.out.println("all grace marks students no--->"+graceTot);
 		
 		
-		
-
 	}
+
+	private static int getGraceTotalStu(Student[] stu) {
+		int count=0;
+		for(int i=0;i<stu.length;i++) {
+			if ( ((stu[i].sub1 > 30) && (stu[i].sub1 < 35) )
+					||
+					((stu[i].sub2 > 30) && (stu[i].sub2 < 35))
+					||
+					((stu[i].sub3 > 30) && (stu[i].sub3 < 35)) 
+					) {
+				System.out.println(stu[i]);
+				count++;
+			}
+		}
+		
+		
+		
+		return count;}
 
 	private static int totalPassStudents(Student[] stu) {
 		int count=0;
